@@ -61,20 +61,20 @@ public class Player : MonoBehaviour
 
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
 
-        if(moveDir != Vector3.zero)
+        if (moveDir != Vector3.zero)
         {
             lastInteractDir = moveDir;
         }
 
         float interactDistance = 2f;
-        if(Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, counterLayerMask))
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, counterLayerMask))
         {
-           if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
                 // Has counter
-                if(clearCounter != selectedCounter)
+                if (clearCounter != selectedCounter)
                 {
-                    SetSelectedCounter(clearCounter);                  
+                    SetSelectedCounter(clearCounter);
                 }
             }
             else
@@ -86,10 +86,7 @@ public class Player : MonoBehaviour
         {
             SetSelectedCounter(null);
         }
-
-        Debug.Log(selectedCounter);
     }
-
     private void HandleMovement()
     {
         Vector2 inputVector = _gameInput.GetMovementVectorNormalized();
