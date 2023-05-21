@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3709300178666808783}
   - component: {fileID: 3374808515182179864}
   - component: {fileID: 5842219419976903314}
+  - component: {fileID: 8947854561682810232}
   m_Layer: 6
   m_Name: PrograssBarUI
   m_TagString: Untagged
@@ -118,6 +119,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cuttingCounter: {fileID: 3229791297041316029}
   barImage: {fileID: 6441627604106591022}
+--- !u!114 &8947854561682810232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209755017092259452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185d77341f7ab3c4b94ff54377bb988c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 3
 --- !u!1 &4778454753440170805
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 5465430697501169236, guid: 1f85d810f80134b4a975d96a5e303560,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5465430697501169236, guid: 1f85d810f80134b4a975d96a5e303560,
         type: 3}
