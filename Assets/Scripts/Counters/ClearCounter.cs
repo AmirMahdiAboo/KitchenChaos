@@ -8,7 +8,7 @@ public class ClearCounter : BaseCounter
 
     public override void Interact(Player player)
     {
-        if(!HasKitchenObject())
+        if (!HasKitchenObject())
         {
             // There is no kitchen object here
             if (player.HasKitchenObject())
@@ -24,9 +24,30 @@ public class ClearCounter : BaseCounter
         else
         {
             // There is a kitchen object here
-            if(player.HasKitchenObject())
+            if (player.HasKitchenObject())
             {
                 // Player is carrying something
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+                    // Player is holding a plate   
+                    if (plateKitchenObject.TryAddIgredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySlef();
+                    }
+
+                }
+                else
+                {
+                    // Player is not carrying Plate but something else
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                    {
+                        //counter is holding a plate
+                        if (plateKitchenObject.TryAddIgredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                        {
+                            player.GetKitchenObject().DestroySlef();
+                        }
+                    }
+                }
             }
             else
             {
