@@ -6,8 +6,8 @@ using System;
 public class StoveCounter : BaseCounter, IHasProgress
 {
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> onPrograssChanged;
-
     public event EventHandler<OnStateChangedEventArgs> OnStateChaned;
+
     public class OnStateChangedEventArgs : EventArgs
     {
         public State state;

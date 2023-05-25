@@ -7,6 +7,8 @@ public class DeliveryManager : MonoBehaviour
 {
     public event EventHandler OnRecipeSpawned;
     public event EventHandler OnRecipeCompleted;
+    public event EventHandler OnRecipeSuccess;
+    public event EventHandler OnRecipeFailed;
 
     public static DeliveryManager Instance { get; private set; }
 
@@ -20,7 +22,7 @@ public class DeliveryManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this; 
+        Instance = this;
         waitingRecipeSOList = new List<RecipeSO>();
     }
     private void Update()
@@ -32,8 +34,8 @@ public class DeliveryManager : MonoBehaviour
 
             if (waitingRecipeSOList.Count < waitingRecipesMax)
             {
-                RecipeSO waitingRecipeSO = RecipeListSO.recipeSOList[UnityEngine.Random.Range(0, RecipeListSO.recipeSOList.Count)];              
-              
+                RecipeSO waitingRecipeSO = RecipeListSO.recipeSOList[UnityEngine.Random.Range(0, RecipeListSO.recipeSOList.Count)];
+
                 waitingRecipeSOList.Add(waitingRecipeSO);
 
                 OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
@@ -72,20 +74,20 @@ public class DeliveryManager : MonoBehaviour
                         plateContentsMatchesRecipe = false;
                     }
                 }
-                if(plateContentsMatchesRecipe)
+                if (plateContentsMatchesRecipe)
                 {
                     // Player delivered the correct recipe!                 
                     waitingRecipeSOList.RemoveAt(i);
 
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
-
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
         //No matches found!
         // layer did not deliver a corrent recipe
-        Debug.Log("Player did not deliver a correct recipe");
+        OnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList()
