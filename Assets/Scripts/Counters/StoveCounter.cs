@@ -59,8 +59,6 @@ public class StoveCounter : BaseCounter, IHasProgress
 
                         KitchenObject.SpawnKitchenObject(fryingRecipeSO.output, this);
 
-                        Debug.Log("Object Fried!!");
-
                         state = State.Fried;
                         burningTimer = 0f;
                         burningRecipeSO = GetBurningRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
@@ -80,8 +78,6 @@ public class StoveCounter : BaseCounter, IHasProgress
                     {
                         //fried
                         GetKitchenObject().DestroySlef();
-
-                        Debug.Log("Object Burned!!");
 
                         KitchenObject.SpawnKitchenObject(burningRecipeSO.output, this);
 
@@ -207,5 +203,10 @@ public class StoveCounter : BaseCounter, IHasProgress
             }
         }
         return null;
+    }
+
+    public bool isFriend()
+    {
+        return state == State.Fried;
     }
 }
