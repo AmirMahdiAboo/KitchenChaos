@@ -508,7 +508,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6353910061009811245, guid: 2a9a12680a6044a49a14235f6af80d65,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3478319874803168241}
+    - targetCorrespondingSourceObject: {fileID: 6353910061009811245, guid: 2a9a12680a6044a49a14235f6af80d65,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8994839849889401986}
   m_SourcePrefab: {fileID: 100100000, guid: 2a9a12680a6044a49a14235f6af80d65, type: 3}
 --- !u!224 &4972788835073904616 stripped
 RectTransform:
@@ -516,6 +524,45 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3414669976506968155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8597028406001311606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6353910061009811245, guid: 2a9a12680a6044a49a14235f6af80d65,
+    type: 3}
+  m_PrefabInstance: {fileID: 3414669976506968155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3478319874803168241
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597028406001311606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e38e36142b253ed47812aa2390a3677b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8994839849889401986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597028406001311606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbe319d7671210479665633be5efc86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoveCounter: {fileID: 2135399325830123144}
 --- !u!1001 &5178839544649213203
 PrefabInstance:
   m_ObjectHideFlags: 0
